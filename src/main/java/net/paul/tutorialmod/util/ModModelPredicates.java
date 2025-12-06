@@ -1,0 +1,15 @@
+package net.paul.tutorialmod.util;
+
+import net.minecraft.client.item.ModelPredicateProviderRegistry;
+import net.minecraft.util.Identifier;
+import net.paul.tutorialmod.TutorialMod;
+import net.paul.tutorialmod.component.ModDataComponentTypes;
+import net.paul.tutorialmod.item.ModItems;
+
+public class ModModelPredicates {
+    public static void registerModelPredicates() {
+        ModelPredicateProviderRegistry.register(ModItems.CHISEL, Identifier.of(TutorialMod.MOD_ID, "used"),
+                (stack, world, entity, seed) -> stack.get(ModDataComponentTypes.COORDINATES) != null ? 1f : 0f);
+
+    }
+}
