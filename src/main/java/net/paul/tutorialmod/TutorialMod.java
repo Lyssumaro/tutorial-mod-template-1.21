@@ -2,8 +2,15 @@ package net.paul.tutorialmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.passive.SheepEntity;
+import net.minecraft.item.Items;
+import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import net.paul.tutorialmod.block.ModBlocks;
 import net.paul.tutorialmod.component.ModDataComponentTypes;
 import net.paul.tutorialmod.item.ModItemGroups;
@@ -29,5 +36,18 @@ public class TutorialMod implements ModInitializer {
 		FuelRegistry.INSTANCE.add(ModItems.STARLIGHT_ASHES, 600);
 
 		PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
+		AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
+			if(entity instanceof SheepEntity sheepEntity) {
+				if(player.getMainHandStack().getItem() == Items.END_ROD) {
+					player.sendMessage(Text.literal("The Player just hit a sheep with an END ROD! YOU SICK FRICK!"));
+					player.getMainHandStack().decrement(1);
+					sheepEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 600, 6));
+				}
+
+				return ActionResult.PASS;
+			}
+
+			return ActionResult.PASS;
+		});
 	}
 }
