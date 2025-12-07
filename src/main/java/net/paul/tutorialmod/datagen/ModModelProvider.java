@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 import net.paul.tutorialmod.block.ModBlocks;
 import net.paul.tutorialmod.block.custom.PinkGarnetLampBlock;
 import net.paul.tutorialmod.item.ModItems;
+import net.paul.tutorialmod.sound.ModSounds;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -67,6 +68,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.PINK_GARNET_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.KAUPEN_SMITHING_TEMPLATE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.BAR_BRAWL_MUSIC_DISC, Models.GENERATED);
 
     }
 }
