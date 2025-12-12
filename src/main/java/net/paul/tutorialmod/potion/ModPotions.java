@@ -18,7 +18,7 @@ public class ModPotions {
         return Registry.registerReference(Registries.POTION, Identifier.of(TutorialMod.MOD_ID, name), potion);
     }
 
-    public static void registerPotion() {
-        TutorialMod.LOGGER.info("Registering Mod Potions for" + TutorialMod.MOD_ID);
+    public static void registerPotions() {
+        TutorialMod.LOGGER.info("Registering Mod Potions for " + TutorialMod.MOD_ID);
     }
 }

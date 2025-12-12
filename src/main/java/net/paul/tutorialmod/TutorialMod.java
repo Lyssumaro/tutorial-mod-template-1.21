@@ -43,7 +43,7 @@ public class TutorialMod implements ModInitializer {
 		ModSounds.registerSounds();
 
 		ModEffects.registerEffects();
-		ModPotions.registerPotion();
+		ModPotions.registerPotions();
 
 		ModEnchantmentEffects.registerEnchantmentEffects();
 		ModWorldGeneration.generateModWorldGen();

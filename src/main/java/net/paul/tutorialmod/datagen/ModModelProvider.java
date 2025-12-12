@@ -2,15 +2,14 @@ package net.paul.tutorialmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.*;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.util.Identifier;
 import net.paul.tutorialmod.block.ModBlocks;
 import net.paul.tutorialmod.block.custom.CauliflowerCropBlock;
 import net.paul.tutorialmod.block.custom.HoneyBerryBushBlock;
 import net.paul.tutorialmod.block.custom.PinkGarnetLampBlock;
 import net.paul.tutorialmod.item.ModItems;
-import net.paul.tutorialmod.sound.ModSounds;
+import net.minecraft.data.client.*;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -23,6 +22,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_PINK_GARNET_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PINK_GARNET_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PINK_GARNET_NETHER_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PINK_GARNET_END_ORE);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAGIC_BLOCK);
 
@@ -58,7 +60,6 @@ public class ModModelProvider extends FabricModelProvider {
         // itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.STARLIGHT_ASHES, Models.GENERATED);
 
-
         itemModelGenerator.register(ModItems.PINK_GARNET_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PINK_GARNET_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PINK_GARNET_SHOVEL, Models.HANDHELD);
@@ -76,6 +77,5 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.KAUPEN_SMITHING_TEMPLATE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.BAR_BRAWL_MUSIC_DISC, Models.GENERATED);
-
     }
 }

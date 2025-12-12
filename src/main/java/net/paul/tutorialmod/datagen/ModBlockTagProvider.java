@@ -2,10 +2,10 @@ package net.paul.tutorialmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
 import net.paul.tutorialmod.block.ModBlocks;
 import net.paul.tutorialmod.util.ModTags;
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
 

@@ -33,6 +33,13 @@ public class ModBlocks {
             new ExperienceDroppingBlock(UniformIntProvider.create(3, 6),
                     AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
 
+    public static final Block PINK_GARNET_END_ORE = registerBlock("pink_garnet_end_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(4, 8),
+                    AbstractBlock.Settings.create().strength(7f).requiresTool()));
+    public static final Block PINK_GARNET_NETHER_ORE = registerBlock("pink_garnet_nether_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(1, 5),
+                    AbstractBlock.Settings.create().strength(3f).requiresTool()));
+
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
             new MagicBlock(AbstractBlock.Settings.create().strength(1f).requiresTool().sounds(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
@@ -61,11 +68,11 @@ public class ModBlocks {
 
     public static final Block PINK_GARNET_LAMP = registerBlock("pink_garnet_lamp",
             new PinkGarnetLampBlock(AbstractBlock.Settings.create()
-                    .strength(1f).requiresTool().luminance(state -> state.get(PinkGarnetLampBlock.CLICKED) ? 15:0)));
+                    .strength(1f).requiresTool().luminance(state -> state.get(PinkGarnetLampBlock.CLICKED) ? 15 : 0)));
 
     public static final Block CAULIFLOWER_CROP = registerBlockWithoutBlockItem("cauliflower_crop",
-    new CauliflowerCropBlock(AbstractBlock.Settings.create().noCollision()
-            .ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY).mapColor(MapColor.DARK_GREEN)));
+            new CauliflowerCropBlock(AbstractBlock.Settings.create().noCollision()
+                    .ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY).mapColor(MapColor.DARK_GREEN)));
 
     public static final Block HONEY_BERRY_BUSH = registerBlockWithoutBlockItem("honey_berry_bush",
             new HoneyBerryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)));
@@ -73,6 +80,7 @@ public class ModBlocks {
     private static Block registerBlockWithoutBlockItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, Identifier.of(TutorialMod.MOD_ID, name), block);
     }
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(TutorialMod.MOD_ID, name), block);
