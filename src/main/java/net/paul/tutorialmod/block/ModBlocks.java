@@ -12,10 +12,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.paul.tutorialmod.TutorialMod;
-import net.paul.tutorialmod.block.custom.CauliflowerCropBlock;
-import net.paul.tutorialmod.block.custom.HoneyBerryBushBlock;
-import net.paul.tutorialmod.block.custom.MagicBlock;
-import net.paul.tutorialmod.block.custom.PinkGarnetLampBlock;
+import net.paul.tutorialmod.block.custom.*;
 import net.paul.tutorialmod.sound.ModSounds;
 import net.paul.tutorialmod.world.tree.ModSaplingGenerators;
 
@@ -94,7 +91,7 @@ public class ModBlocks {
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
 
     public static final Block DRIFTWOOD_SAPLING = registerBlock("driftwood_sapling",
-            new SaplingBlock(ModSaplingGenerators.DRIFTWOOD, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+            new ModSaplingBlock(ModSaplingGenerators.DRIFTWOOD, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING), Blocks.STONE));
 
 
 
