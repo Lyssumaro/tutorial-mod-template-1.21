@@ -10,6 +10,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.paul.tutorialmod.TutorialMod;
 import net.paul.tutorialmod.block.ModBlocks;
+import net.paul.tutorialmod.entity.ModEntities;
 import net.paul.tutorialmod.item.custom.ChiselItem;
 import net.paul.tutorialmod.item.custom.HammerItem;
 import net.paul.tutorialmod.item.custom.ModArmorItem;
@@ -81,6 +82,10 @@ public class ModItems {
 
     public static final Item HONEY_BERRIES =registerItem("honey_berries",
             new AliasedBlockItem(ModBlocks.HONEY_BERRY_BUSH, new Item.Settings().food(ModFoodComponents.HONEY_BERRY)));
+
+    public static final Item MANTIS_SPAWN_EGG = registerItem("mantis_spawn_egg",
+            new SpawnEggItem(ModEntities.MANTIS, 0x9dc783, 0xbfaf5f, new Item.Settings()));
+
 
 
     private static Item registerItem(String name, Item item) {
